@@ -23,6 +23,13 @@ subconverter-docker 是基于 [tindy2013/subconverter][1] 项目的自定义 Doc
     - `中国流媒体`分组现只包含在中国以外有运营的流媒体
 
 
+
+## Dockerfile 构建
+
+```bash
+sudo docker buildx build  --platform linux/amd64 -t subconverter:latest .
+```
+
 ## 部署
 
 ### docker 部署
@@ -33,7 +40,7 @@ docker run -d \
 --name=subconverter \
 --restart=always \
 -p 25500:25500 \
-thehaukeng/subconverter
+subconverter:latest
 ```
 
 ### docker-compose 部署
